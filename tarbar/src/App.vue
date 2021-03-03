@@ -2,7 +2,7 @@
   <div>
     <router-view></router-view>
     <tarbar>
-      
+
       <tarbar-item path="/home" activeColor="black">
         <div slot="item-icon">
           <img src="./assets/img/tarbar/home.png" alt="" />
