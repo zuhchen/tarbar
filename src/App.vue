@@ -1,28 +1,51 @@
 <template>
-  <div id="tarbar">
-    <div class="tarbarItem">首页</div>
-    <div class="tarbarItem">分类</div>
-    <div class="tarbarItem">购物车</div>
-    <div class="tarbarItem">我的</div>
+  <div>
+    <router-view></router-view>
+    <tarbar>
+
+      <tarbar-item path="/home" activeColor="black">
+        <div slot="item-icon">
+          <img src="./assets/img/tarbar/home.png" alt="" />
+        </div>
+        <div slot="item-text">首页</div>
+      </tarbar-item>
+
+      <tarbar-item path="/item" activeColor="yellow">
+        <div slot="item-icon">
+          <img src="./assets/img/tarbar/item.png" alt="" />
+        </div>
+        <div slot="item-text">分类</div>
+      </tarbar-item>
+
+      <tarbar-item path="/cart">
+        <div slot="item-icon">
+          <img src="./assets/img/tarbar/shopingcart.png" alt="" />
+        </div>
+        <div slot="item-text">购物车</div>
+      </tarbar-item>
+
+      <tarbar-item path="/profile">
+        <div slot="item-icon">
+          <img src="./assets/img/tarbar/mine.png" alt="" />
+        </div>
+        <div slot="item-text">我的</div>
+      </tarbar-item>
+    </tarbar>
   </div>
 </template>
 
+<script>
+import tarbar from "./components/tarbar/tarvar";
+import tarbarItem from "./components/tarbar/tarbaritem";
+export default {
+  name: "App",
+  components: {
+    tarbar,
+    tarbarItem,
+  },
+};
+</script>
+
 <style>
 @import "./assets/css/base.css";
-#tarbar {
-  position: fixed;
-  display: flex;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  flex-flow: row nowrap;
-  background-color: rgb(245, 242, 237);
-  justify-content: space-around;
-  box-shadow: 0 -3px 5px rgb(10, 10, 10);
-}
-
-.tarbarItem {
-  height: 49px;
-  text-align: center;
-}
 </style>
