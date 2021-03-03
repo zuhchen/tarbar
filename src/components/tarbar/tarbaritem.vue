@@ -2,8 +2,8 @@
   <div class="tarbaritem" @click="itemClick">
     
     <slot></slot>
-    <slot name="item-icon"></slot>
-    <slot name="item-text"></slot>
+    <!-- <slot name="item-icon"></slot>
+    <slot name="item-text"></slot> -->
   </div>
 </template>
 
@@ -37,8 +37,10 @@ export default {
 </script>
 <style>
 .tarbaritem {
+  margin: 2px 0;
   height: 49px;
   font-size: 14px;
+  text-align: center;
 }
 
 .tarbaritem img{
