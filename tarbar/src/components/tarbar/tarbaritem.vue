@@ -1,9 +1,12 @@
 <template>
   <div class="tarbaritem" @click="itemClick">
+    <!-- <slot></slot> -->
+    <div>
+      <slot name="active-item-icon" v-if="isActive"></slot>
+      <slot name="item-icon" v-else></slot>
+    </div>
+    <div :style="activeStyle"><slot name="item-text"></slot></div>
     
-    <slot></slot>
-    <slot name="item-icon"></slot>
-    <slot name="item-text"></slot>
   </div>
 </template>
 
@@ -17,7 +20,7 @@ export default {
     path: String,
     activeColor: {
       type: String,
-      default: "red",
+      default: "black",
     },
   },
   methods: {
@@ -37,8 +40,10 @@ export default {
 </script>
 <style>
 .tarbaritem {
+  margin: 2px 0;
   height: 49px;
   font-size: 14px;
+  text-align: center;
 }
 
 .tarbaritem img{
