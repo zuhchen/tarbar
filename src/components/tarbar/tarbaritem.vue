@@ -1,7 +1,10 @@
 <template>
   <div class="tarbaritem" @click="itemClick">
     <!-- <slot></slot> -->
-    <div><slot name="item-icon"></slot></div>
+    <div>
+      <slot name="active-item-icon" v-if="isActive"></slot>
+      <slot name="item-icon" v-else></slot>
+    </div>
     <div :style="activeStyle"><slot name="item-text"></slot></div>
     
   </div>
