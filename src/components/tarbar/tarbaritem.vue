@@ -1,9 +1,9 @@
 <template>
   <div class="tarbaritem" @click="itemClick">
+    <!-- <slot></slot> -->
+    <div><slot name="item-icon"></slot></div>
+    <div :style="activeStyle"><slot name="item-text"></slot></div>
     
-    <slot></slot>
-    <!-- <slot name="item-icon"></slot>
-    <slot name="item-text"></slot> -->
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     path: String,
     activeColor: {
       type: String,
-      default: "red",
+      default: "black",
     },
   },
   methods: {

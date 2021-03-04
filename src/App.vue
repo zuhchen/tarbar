@@ -2,33 +2,53 @@
   <div>
     <router-view></router-view>
     <tarbar>
+      <tarbar-item path="/home" activeColor="red">
+        <!-- vue3使用template标签来使用slot -->
+        <template v-slot:item-icon>
+          <div>
+            <img src="./assets/img/tarbar/home.png" alt="" />
+          </div>
+        </template>
 
-      <tarbar-item path="/home" activeColor="black">
-        <!-- <div slot="item-icon"> -->
-          <img src="./assets/img/tarbar/home.png" alt="" />
-        <!-- </div> -->
-        <div>首页</div>
+        <template v-slot:item-text>
+          <div>首页</div>
+        </template>
       </tarbar-item>
 
       <tarbar-item path="/item" activeColor="yellow">
-        <!-- <div slot="item-icon"> -->
-          <img src="./assets/img/tarbar/item.png" alt="" />
-        <!-- </div> -->
-        <div>分类</div>
+        <template v-slot:item-icon>
+          <div>
+            <img src="./assets/img/tarbar/item.png" alt="" />
+          </div>
+        </template>
+
+        <template v-slot:item-text>
+          <div>分类</div>
+        </template>
       </tarbar-item>
 
-      <tarbar-item path="/cart">
-        <!-- <div slot="item-icon"> -->
-          <img src="./assets/img/tarbar/shopingcart.png" alt="" />
-        <!-- </div> -->
-        <div>购物车</div>
+      <tarbar-item path="/cart" activeColor="pink">
+        <template v-slot:item-icon>
+          <div>
+            <img src="./assets/img/tarbar/shopingcart.png" alt="" />
+          </div>
+        </template>
+
+        <template v-slot:item-text>
+          <div>购物车</div>
+        </template>
       </tarbar-item>
 
-      <tarbar-item path="/profile">
-        <!-- <div slot="item-icon"> -->
-          <img src="./assets/img/tarbar/mine.png" alt="" />
-        <!-- </div> -->
-        <div>我的</div>
+      <tarbar-item path="/profile" activeColor="green">
+        <template v-slot:item-icon>
+          <div>
+            <img src="./assets/img/tarbar/mine.png" alt="" />
+          </div>
+        </template>
+
+        <template v-slot:item-text>
+          <div>我的</div>
+        </template>
       </tarbar-item>
     </tarbar>
   </div>
